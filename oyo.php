@@ -64,7 +64,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, '{
 	"name": "'.generateRandomString(10).'",
 	"phone": "'.$phone_number.'",
 	"push_type": "gcm",
-	"referral_code": "'.$reff.'",
+	"referral_code": "FATHE7K9YW",
 	"token": "c-PeIXwYYwg:APA91bHHQLHnS0FvSIOYJpN-hBJXYHxc1xQh8FrMZaQawBVPVyXxk77vTz7LWC4rtApBrZb3p4pOwJRD2JBMq0u3sChUgpasQFGcN_HNAGCscrcREwL-trFIBX3votCcFY1bn7eBmuCd",
 	"updated_at": 0
 }');
