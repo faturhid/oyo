@@ -45,13 +45,46 @@ if($json->is_user_present == 1){
 
 echo 'Enter OTP : '; 
 $otp = trim(fgets(STDIN)); 
-echo 'Enter refferal : '; 
-$reff = trim(fgets(STDIN)); 
+
+$names = array(
+    'Christopher',
+    'Ryan',
+    'Ethan',
+    'John',
+    'Zoey',
+    'Sarah',
+    'Michelle',
+    'Samantha',
+    'Luis',
+    'Roney',
+    'Zidane',	
+);
+
+$surnames = array(
+    'Walker',
+    'Thompson',
+    'Anderson',
+    'Johnson',
+    'Tremblay',
+    'Peltier',
+    'Cunningham',
+    'Simpson',
+    'Mercado',
+    'Sellers',
+    'Fernado',
+    'Robbet',
+    'Ibrahim'	
+);
+
+$random_name = $names[mt_rand(0, sizeof($names) - 1)];
+
+$random_surname = $surnames[mt_rand(0, sizeof($surnames) - 1)];
+
 
 $ch = curl_init();
 
 curl_setopt($ch, CURLOPT_URL, 'https://api.oyorooms.com/v2/users/new_sign_up?additional_fields=ab_service_data&handset=samsung%2C%20SM-G610F&version=20205&partner_app_version=20205&android_id='.generateRandomString(16).'&idfa=&sid=1551940465205');
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1)
 curl_setopt($ch, CURLOPT_POSTFIELDS, '{
 	"truecaller": false,
 	"code": "'.$otp.'",
@@ -61,10 +94,10 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, '{
 	"email": "'.generateRandomString(10).'@gmail.com",
 	"id": 0,
 	"idfa": "",
-	"name": "'.generateRandomString(10).'",
+	"name": "'.$random_name . ' ' . $random_surname.'",
 	"phone": "'.$phone_number.'",
 	"push_type": "gcm",
-	"referral_code": "'.$reff.'",
+	"referral_code": "FATHE7K9YW",
 	"token": "c-PeIXwYYwg:APA91bHHQLHnS0FvSIOYJpN-hBJXYHxc1xQh8FrMZaQawBVPVyXxk77vTz7LWC4rtApBrZb3p4pOwJRD2JBMq0u3sChUgpasQFGcN_HNAGCscrcREwL-trFIBX3votCcFY1bn7eBmuCd",
 	"updated_at": 0
 }');
